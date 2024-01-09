@@ -6,24 +6,39 @@
 //
 
 import UIKit
+import SnapKit
 
 class LaunchViewController: UIViewController {
+    let vc = ViewController()
+    let mainView: UIView = {
+          let view = UIView()
+          return view
+      }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [self] in
+            navigationController?.pushViewController(vc, animated: true)
+        }
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        view.addSubview(mainView)
+        
+               mainView.snp.makeConstraints { make in
+                   make.edges.equalToSuperview()
+               }
+        
+        let backgroundImage = UIImageView(image: UIImage(named: "Background"))
+               backgroundImage.contentMode = .scaleAspectFill
+               mainView.addSubview(backgroundImage)
+
+      
+               backgroundImage.snp.makeConstraints { make in
+                   make.edges.equalToSuperview()
+               }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "fd010e54231331fc19338f81c6d072cd9ace2825",
+        "version" : "5.18.8"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mabolotska/SnapKit",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "58320fe80522414bf3a7e24c88123581dc586752"
+      }
+    }
+  ],
+  "version" : 2
+}
